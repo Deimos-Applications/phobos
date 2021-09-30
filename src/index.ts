@@ -1,4 +1,4 @@
 export const main = (): boolean => {
-  console.log("phobos");
+  // console.log("phobos");
   return true;
 };

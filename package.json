@@ -30,24 +30,29 @@
     "cover:check": "nyc --check-coverage npm run test",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "tslint src/**/*.ts test/**/*.ts",
+    "gen-parser": "nearleyc src/grammar/index.ne -o src/grammar/index.ts",
     "preversion": "npm run build && npm run cover:check",
     "postversion": "git push && git push --tags",
     "prepare": "npm run build",
-    "test": "mocha",
+    "railroad": "nearley-railroad src/grammar/index.ne -o grammar.html",
+    "test": "jest",
     "upgrade": "npx npm-check -u",
+    "unparse": "nearley-unparse -s test/unparse src/grammar/index.ne",
     "version": "npm run build && npm run changelog:update"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.6",
-    "@types/mocha": "^8.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/moo": "^0.5.4",
+    "@types/nearley": "^2.11.1",
     "@types/node": "^15.0.1",
-    "chai": "^4.1.2",
     "conventional-changelog-cli": "^2.0.12",
     "coveralls": "^3.0.3",
     "cz-conventional-changelog": "^3.0.2",
-    "mocha": "^9.0.0",
+    "jest": "^27.0.4",
+    "jest-each": "^27.0.2",
     "nyc": "^15.0.0",
     "source-map-support": "^0.5.12",
+    "ts-jest": "^27.0.3",
     "ts-node": "^10.0.0",
     "tslint": "^6.0.0",
     "typescript": "^4.0.3"
@@ -57,5 +62,8 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "moo": "^0.5.1",
+    "nearley": "^2.20.1"
+  }
 }

@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/typescript.svg)](https://www.npmjs.com/package/phobos)
 
-[Phobos](https://deimos.app/phobos/) is an experimental general purpose language. Phobos is heavily inspired by JavaScript, TypeScript and Dart. TypeScript compiles to multiple targets including plain JavaScript, TypeScript, x86 assembly and RISCV x64. Try it out at the [playground](https://deimos.app/phobos/play/), and stay up to date via [our blog](https://deimos.app/blog/category/phobos).
+[Phobos](https://deimos.app/phobos/) is an experimental general purpose language. Phobos is heavily inspired by JavaScript, TypeScript and Dart. Phobos compiles to multiple targets including plain JavaScript, TypeScript, x86 assembly and RISCV x64. Try it out at the [playground](https://deimos.app/phobos/play/), and stay up to date via [our blog](https://deimos.app/blog/category/phobos).
 
 Find others who are using Phobos at [our community page](https://deimos.app/phobos/community/).
 
@@ -44,10 +44,11 @@ Change to the Phobos directory:
 cd phobos
 ```
 
-Install [ts-node](https://www.npmjs.com/package/ts-node):
+Install [ts-node](https://www.npmjs.com/package/ts-node) and [nearley](https://nearley.js.org/):
 
 ```bash
 npm install -g ts-node
+npm install -g nearley
 ```
 
 Use one of the following to build and test:
